@@ -39,13 +39,13 @@ You should generally use a macro any place you would use a function or subroutin
 For non-programmers, I'd summarize this as: **either** use a macro any place you want to produce the same thing multiple times in multiple different files **or** to produce something different under different circumstances (this would probably make more sense if you check the guide on defining a macro).
 
 !!! warning
-For readability reasons, you should not use a macro tag as a variable. You should instead use the Set tag and treat the variable as you would any template variable.
+    For readability reasons, you should not use a macro tag as a variable. You should instead use the Set tag and treat the variable as you would any template variable.
 
 ### Defining a macro
 
 ```html
 <xf:macro
-        id="my_macro_name">
+    id="my_macro_name">
 
     <!-- Your macro content -->
 
@@ -55,14 +55,14 @@ For readability reasons, you should not use a macro tag as a variable. You shoul
 At its simplest, a macro can be defined with a `id` attribute and the content you want repeated inside the macro tag.
 
 !!! note
-When you're using a macro in multiple files, it's best practice to put the macro in it's own template.
+    When you're using a macro in multiple files, it's best practice to put the macro in it's own template.
 
 #### Macro arguments
 
 ```html
 <xf:macro
-        id="my_macro_name"
-        arg-message="My amazing macro message!">
+    id="my_macro_name"
+    arg-message="My amazing macro message!">
 
     <h1>Message</h1>
     <p>{$message}</p>
@@ -84,7 +84,7 @@ Sometimes it's necessary to mark an argument as required. This can be done by se
 At it's simplest, you include a macro by setting the `id` attribute and leaving the tag empty.
 
 !!! note
-When using a macro tag, you should use the self-closing form of the tag to allow someone to more easily distinguish the difference between a definition and usage of a macro.
+    When using a macro tag, you should use the self-closing form of the tag to allow someone to more easily distinguish the difference between a definition and usage of a macro.
 
 #### Macro arguments
 
@@ -97,7 +97,7 @@ You can also provide arguments to the macro:
 Where `argName` is the name of the macro argument.
 
 !!! note
-You should use `lowerCamelCase` for your macro argument names.
+    You should use `lowerCamelCase` for your macro argument names.
 
 ## Template control structures
 
@@ -136,7 +136,7 @@ The else and else-if tags are used in conjunction with the if tag to conditional
 ```html
 <xf:if is="$xf.visitor.is_admin">
     <!-- Content here will only be shown to Administrators... -->
-    <xf:else />
+<xf:else />
     <!-- Content here will be shown to anyone who is not an Administrator! -->
 </xf:if>
 ```
@@ -153,7 +153,7 @@ The else and else-if tags are used in conjunction with the if tag to conditional
 		Content here will only be shown to Moderators
 		(excluding users who are also Administrators).
 	-->
-    <xf:else />
+<xf:else />
     <!--
 		Content here will be shown to anyone who is not
 		an Administrator, or a Moderator.
@@ -248,7 +248,7 @@ You can also define your own breadcrumb programmatically by calling your functio
 The `source` parameter essentially takes an array of objects with `href` and `value` attributes (multidimensional array), where each object is a breadcrumb element.
 
 !!! note
-If you want to change the root breadcrumb, you can change the "Root breadcrumb" option in the "Basic board information" options section.
+    If you want to change the root breadcrumb, you can change the "Root breadcrumb" option in the "Basic board information" options section.
 
 ### Button tag
 
@@ -373,7 +373,7 @@ The CSS tag takes the following attributes:
 <xf:css>
     html, body {
     font-family: "Roboto", sans-serif;
-    }
+}
 </xf:css>
 ```
 
@@ -402,7 +402,7 @@ The JS tag takes the following attributes:
 - `addon` - Whether or not the development JS URL should be used. - Respected only in development mode.
 
 !!! warning
-The `src` tag cannot be used in conjunction with either the `prod` or `dev` tags.
+    The `src` tag cannot be used in conjunction with either the `prod` or `dev` tags.
 
 #### Alternative uses
 
@@ -429,10 +429,10 @@ The set tag allows you to create a reference to another variable or create a new
 ```
 
 !!! warning
-Do not use the Set tag for a group of elements you wish to use in multiple templates, you should instead use the Macro Tag.
+    Do not use the Set tag for a group of elements you wish to use in multiple templates, you should instead use the Macro Tag.
 
 !!! warning
-The variable name (`var` attribute) must begin with a `$`.
+    The variable name (`var` attribute) must begin with a `$`.
 
 The set tag takes the following attributes:
 
@@ -451,8 +451,8 @@ The set tag takes the following attributes:
 When the `value` attribute is not provided, and the tag is not empty, the variable value will be set to the contents of the tag.
 
 !!! warning
-When you use the Set tag in this form, the value will be escaped and the resulting value will be a string.
-The `value` attribute, whilst not supporting HTML or HTML-like tags does not have this limitation.
+    When you use the Set tag in this form, the value will be escaped and the resulting value will be a string.
+    The `value` attribute, whilst not supporting HTML or HTML-like tags does not have this limitation.
 
 ### Likes tag
 
@@ -510,7 +510,7 @@ The widget tag takes the following attributes:
     - You can also provide widget-specific options as attributes when the `class` attribute is used.
 
 !!! warning
-The `class` tag cannot be used in conjunction with the `key` tag.
+    The `class` tag cannot be used in conjunction with the `key` tag.
 
 ### UserActivity tag
 
@@ -581,7 +581,7 @@ The Username tag takes the following attributes:
 - `href` - The link to navigate to when the username is clicked.
 
 !!! warning
-The tool-tip will not be displayed if an `href` is set, as it won't work and might be misleading to users.
+    The tool-tip will not be displayed if an `href` is set, as it won't work and might be misleading to users.
 
 ### UserTitle tag
 
@@ -622,7 +622,7 @@ By default, the modification mode is `replace`. (i.e. if the attribute is not sp
 
 ## Template elements
 
-### datalists
+### Data lists
 Data lists are a way to display data in a table using xenforo template tags.
 
 #### xf:datalist
@@ -713,7 +713,7 @@ $viewParams = [
 </div>
 ```
 
-### forms
+### Forms
 Forms are a way to create HTML forms using XenForo template tags.
 
 #### xf:form
